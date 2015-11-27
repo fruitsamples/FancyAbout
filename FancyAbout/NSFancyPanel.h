@@ -1,7 +1,7 @@
 /*
      File: NSFancyPanel.h
  Abstract: Subclass of NSPanel that routes key and mouse events to the controller.
-  Version: 1.1
+  Version: 1.2
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -41,19 +41,19 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
  POSSIBILITY OF SUCH DAMAGE.
  
- Copyright (C) 2011 Apple Inc. All Rights Reserved.
+ Copyright (C) 2012 Apple Inc. All Rights Reserved.
  
  */
 
 #import <AppKit/AppKit.h>
 
-
 @protocol NSFancyPanelController
-- (BOOL) handlesKeyDown: (NSEvent *) keyDown inWindow: (NSWindow *) window;
-- (BOOL) handlesMouseDown: (NSEvent *) mouseDown inWindow: (NSWindow *) window;
+- (BOOL)handlesKeyDown:(NSEvent *)keyDown inWindow:(NSWindow *)window;
+- (BOOL)handlesMouseDown:(NSEvent *)mouseDown inWindow:(NSWindow *)window;
 @end
 
-@interface NSFancyPanel : NSPanel {
+@interface NSFancyPanel : NSPanel
+{
     id<NSFancyPanelController> controller;
 }
 

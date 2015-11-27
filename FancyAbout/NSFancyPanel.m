@@ -1,7 +1,7 @@
 /*
      File: NSFancyPanel.m 
  Abstract: Subclass of NSPanel that routes key and mouse events to the controller. 
-  Version: 1.1 
+  Version: 1.2 
   
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple 
  Inc. ("Apple") in consideration of your agreement to the following 
@@ -41,49 +41,49 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE. 
   
- Copyright (C) 2011 Apple Inc. All Rights Reserved. 
+ Copyright (C) 2012 Apple Inc. All Rights Reserved. 
   
  */
 
 #import "NSFancyPanel.h"
 
-
 @implementation NSFancyPanel
 
 @synthesize controller;
 
-//	PUBLIC INSTANCE METHODS -- OVERRIDES FROM NSWindow
+// PUBLIC INSTANCE METHODS -- OVERRIDES FROM NSWindow
 
-//	NSWindow will refuse to become the main window unless it has a title bar.
-//	Overriding lets us become the main window anyway.
-- (BOOL) canBecomeMainWindow
+// NSWindow will refuse to become the main window unless it has a title bar.
+// Overriding lets us become the main window anyway.
+//
+- (BOOL)canBecomeMainWindow
 {
     return YES;
 }
 
-//	Much like above method.
-- (BOOL) canBecomeKeyWindow
+// Much like above method.
+- (BOOL)canBecomeKeyWindow
 {
     return YES;
 }
 
-//	Ask our delegate if it wants to handle keystroke or mouse events before we route them.
-- (void) sendEvent:(NSEvent *) theEvent
+// Ask our delegate if it wants to handle keystroke or mouse events before we route them.
+- (void)sendEvent:(NSEvent *)theEvent
 {
     //	Offer key-down events to the delegats
     if ([theEvent type] == NSKeyDown)
         if (self.controller)
-            if ([self.controller handlesKeyDown: theEvent  inWindow: self])
+            if ([self.controller handlesKeyDown:theEvent inWindow:self])
                 return;
 
     //	Offer mouse-down events (lefty or righty) to the delegate
-    if ( ([theEvent type] == NSLeftMouseDown) || ([theEvent type] == NSRightMouseDown) )
+    if (([theEvent type] == NSLeftMouseDown) || ([theEvent type] == NSRightMouseDown))
         if (self.controller)
-            if ([self.controller handlesMouseDown: theEvent  inWindow: self])
+            if ([self.controller handlesMouseDown:theEvent inWindow:self])
                 return;
 
     //	Delegate wasn’t interested, so do the usual routing.
-    [super sendEvent: theEvent];
+    [super sendEvent:theEvent];
 }
 
 @end

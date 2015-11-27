@@ -1,7 +1,7 @@
 /*
      File: ApplicationController.m 
  Abstract: The sample's controller. 
-  Version: 1.1 
+  Version: 1.2 
   
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple 
  Inc. ("Apple") in consideration of your agreement to the following 
@@ -41,19 +41,14 @@
  STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE 
  POSSIBILITY OF SUCH DAMAGE. 
   
- Copyright (C) 2011 Apple Inc. All Rights Reserved. 
+ Copyright (C) 2012 Apple Inc. All Rights Reserved. 
   
  */
 
-
 #import "ApplicationController.h"
-
 #import "AboutPanelController.h"
 
-
 @implementation ApplicationController
-
-#pragma mark PUBLIC INSTANCE METHODS -- INTERFACE BUILDER ACTIONS
 
 - (IBAction) orderFrontCustomAboutPanel: (id) sender
 {
@@ -68,6 +63,7 @@
 //	This method exists only because this is an example application.
 //	It shows how the scrolling works by exposing the scroller,
 //	which you wouldn’t want to do in a real application.
+//
 - (IBAction) orderFrontCustomAboutPanelWithScroller: (id) sender
 {
     //	Expose the scroller

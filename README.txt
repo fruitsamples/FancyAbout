@@ -126,7 +126,7 @@ AboutPanelController.m and .h
 NSFancyPanel.m and .h
 
 (2) add these to your project’s resources:
-README.rtf
+README.txt
 AboutPanel.nib  (remember, it’s inside en.lproj)
 
 (3) Add this method to your application’s main controller class (.m and .h files):
@@ -150,20 +150,19 @@ You can then change things to your liking:
 ===========================================================================
 BUILD REQUIREMENTS
 
-Xcode 3.2, Mac OS X 10.6 Snow Leopard
+Xcode 4.3, Mac OS X 10.7.x or later
 
 ===========================================================================
 RUNTIME REQUIREMENTS
 
-Mac OS X 10.6 Snow Leopard.
+Mac OS X 10.6.x or later
 
 ===========================================================================
 CHANGES FROM PREVIOUS VERSIONS
 
-Version 1.1
-- Project updated for Xcode 4.
-Version 1.0
-- Initial Version
+1.2 - Upgraded to Xcode 4.3 and Mac OS X 10.7
+1.1 - Project updated for Xcode 4.
+1.0 - Initial Version
 
 ===========================================================================
-Copyright (C) 2003-2011 Apple Inc. All rights reserved.
+Copyright (C) 2003-2012 Apple Inc. All rights reserved.
